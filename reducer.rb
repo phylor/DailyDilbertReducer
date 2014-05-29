@@ -2,7 +2,7 @@ require 'open-uri'
 require 'rss'
 require 'nokogiri'
 
-feed_file = File.read('feed_file_location.conf')
+feed_file = File.read('feed_file_location.conf').strip!
 
 class Comic
   attr_accessor :title, :url, :date
