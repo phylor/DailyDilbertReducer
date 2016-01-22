@@ -22,7 +22,7 @@ class ComicsFeed
     feed_content = open('http://feeds.feedburner.com/DilbertDailyStrip')
 
     feed = RSS::Parser.parse(feed_content, false, false)
-    @title = feed.title
+    @title = feed.title.content
 
     feed.items.each do |item|
       comic = Comic.new
