@@ -67,7 +67,7 @@ end
 feed = ComicsFeed.new
 
 def get_days_not_updated(feed_file)
-  if not File.exist?(feed_file)
+  if feed_file.nil? || feed_file.empty? || (not File.exist?(feed_file))
     100
   else
     DateTime.now - File.mtime(feed_file).to_date
